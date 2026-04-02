@@ -25,7 +25,7 @@ Data Fetching: Static data (no external API used)
 ## Setup Instructions
 
 1. Clone the repository
-   git clone [https://github.com/pemayd/02250363_WEB101_PA1.git]
+   git clone [https://github.com/pemayangkid/02250363_WEB101_PA1.git]
 
 2. Create a new React application using Vite
    npm create vite@latest my-app
