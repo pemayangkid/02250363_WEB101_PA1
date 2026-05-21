@@ -50,24 +50,6 @@ All components are organized inside the `src/components/` folder.
 -> State Management:
 State is handled locally using the `useState` hook inside `PostCard.jsx` to manage user interactions like liking a post.
 
-## Component Architecture
-my-app/
-├── index.html             # Main HTML file serving the React app
-├── package.json           # Project metadata and dependencies
-├── package-lock.json      # Exact versions of installed npm packages
-├── src/
-│   ├── assets/
-│   │   ├── images/        # Contains profile pictures and other images
-│   │   └── videos/        # Contains videos used in posts
-│   ├── components/
-│   │   ├── Navbar.jsx      # Component for the top navigation bar
-│   │   └── PostCard.jsx    # Reusable component to display individual posts
-│   ├── App.jsx             # Main application component rendering the UI
-│   ├── App.css             # Styles specific to App.jsx
-│   ├── index.css           # Global styles for the application
-│   └── main.jsx            # Entry point rendering the React app to the DOM
-└── .gitignore              # Specifies files/folders to be ignored by Git
-
 ## Key Components
 
 -> Navbar:

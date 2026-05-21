@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 // This component represents a single post in the feed
 // It receives data like username, media, caption, and profile image through props
@@ -6,6 +6,20 @@ function PostCard({ username, media, caption, profile }) {
 
   // useState is used here to keep track of whether the post is liked or not
   const [liked, setLiked] = useState(false);
+  
+  // useRef is used to directly access the HTML5 video element to control play/pause
+  const videoRef = useRef(null);
+
+  // Function to toggle play/pause when the user clicks the video
+  const handleVideoClick = () => {
+    if (videoRef.current) {
+      if (videoRef.current.paused) {
+        videoRef.current.play();
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  };
 
   return (
     // Main container for each post card
@@ -41,9 +55,16 @@ function PostCard({ username, media, caption, profile }) {
         <strong>{username}</strong>
       </div>
 
-      {/* Media Section: checks if the media is a video or image and renders accordingly */}
+      {/* Media Section: Hides all default browser bars so no speed buttons appear */}
       {media.endsWith(".mp4") ? (
-        <video style={{ width: "100%", display: "block" }} controls>
+        <video 
+          ref={videoRef}
+          onClick={handleVideoClick}
+          style={{ width: "100%", display: "block", cursor: "pointer" }} 
+          loop
+          muted
+          playsInline
+        >
           <source src={media} type="video/mp4" />
         </video>
       ) : (
